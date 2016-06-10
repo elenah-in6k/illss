@@ -1,0 +1,6 @@
+.body1{
+	background: url(/resources/images/background.jpg) no-repeat center fixed;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;	
+}
