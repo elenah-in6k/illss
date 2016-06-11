@@ -79,6 +79,7 @@
                 </table>
             </div>
         </div>
+        <a href="/result/download" class="btn btn-primary btn-xl page-scroll">Завантажити результати</a>
 </center>
 </body>
 </html>

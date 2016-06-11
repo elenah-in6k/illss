@@ -5,11 +5,12 @@ import core.entity.Symptom;
 import core.entity.dto.IllnessMatches;
 import core.entity.dto.SearchedSymptoms;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import services.FileUtil;
+import services.FileUtils;
 import services.IllnessDetailService;
 import services.SymptomService;
 
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+
 public class SymptomController {
     @Autowired
     SymptomService symptomService;
@@ -57,9 +59,16 @@ public class SymptomController {
         List<IllnessMatches> illnesses = illnessDetailService.getIllnesses(symptomsList);
         mv.addObject("result", illnesses);
         mv.addObject("symptomsList", symptomsList);
-        FileUtil.writeIntoExcel(illnesses);
+        FileUtils.writeIntoExcel(illnesses);
         return mv;
     }
+
+    @RequestMapping(value = "/result/download", method = RequestMethod.GET)
+    public void downloadResult(HttpServletResponse response) throws IOException {
+        FileUtils.downloadFile(response);
+    }
+
+
 
     @RequestMapping(value = "/symptoms/{id:[0-9]+}")
     public ModelAndView getSymptomsBySystem(@PathVariable("id") int id) {

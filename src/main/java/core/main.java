@@ -1,23 +1,14 @@
 package core;
 
 import core.dao.IllnessDao;
-import core.dao.IllnessDaoImpl;
 import core.dao.IllnessDetailDao;
-import core.entity.Illness;
-import core.entity.Symptom;
-import core.entity.dto.IllnessMatches;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import services.FileUtil;
 import services.IllnessDetailService;
 import services.IllnessService;
 import services.SymptomService;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class main {
 
@@ -39,7 +30,7 @@ public class main {
 
 
 //
-        //FileUtil.writeIntoExcel("superExel.xls");
+        //FileUtils.writeIntoExcel("superExel.xls");
 //        List<Illness> ill = illnessService.getByName("гіпер");
 //        for (Illness illness1: ill) {
 //            System.out.println(illness1.getId() + " " + illness1.getName() + " " +illness1.getDescription());
