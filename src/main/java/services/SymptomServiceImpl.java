@@ -25,6 +25,11 @@ public class SymptomServiceImpl implements SymptomService {
         symptomDao.update(symptom);
     }
 
+    public void delete(int id) {
+        Symptom symptom = symptomDao.get(id);
+        symptomDao.delete(symptom);
+    }
+
     public Symptom getById(int id) {
         return symptomDao.findById(id);
     }

@@ -1,7 +1,11 @@
 package core.entity;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
+
+import static org.hibernate.annotations.CascadeType.*;
 
 @Entity
 @Table(name = "illnessdetails")
@@ -16,7 +20,7 @@ public class IllnessDetail {
     @JoinColumn(name = "illness")
     private Illness illness;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL )
     @JoinColumn(name = "symptom")
     private Symptom symptom;
 

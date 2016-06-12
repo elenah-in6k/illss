@@ -20,15 +20,15 @@ public class main {
         IllnessService illnessService = (IllnessService) context.getBean("illnessServiceImpl");
         SymptomService symptomService = (SymptomService) context.getBean("symptomServiceImpl");
 
-        System.out.println("Working Directory = " +
-                System.getProperty("user.dir"));
+        symptomService.delete(1);
 
 
 
 
 
 
-
+//        System.out.println("Working Directory = " +
+//                System.getProperty("user.dir"));
 //
         //FileUtils.writeIntoExcel("superExel.xls");
 //        List<Illness> ill = illnessService.getByName("гіпер");

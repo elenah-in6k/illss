@@ -1,6 +1,5 @@
 package controllers;
 
-import core.dao.SymptomDao;
 import core.entity.Symptom;
 import core.entity.dto.IllnessMatches;
 import core.entity.dto.SearchedSymptoms;
@@ -20,13 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-
 public class SymptomController {
     @Autowired
     SymptomService symptomService;
-
-    @Autowired
-    SymptomDao symptomDao;
 
     @Autowired
     IllnessDetailService illnessDetailService;

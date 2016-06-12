@@ -15,6 +15,8 @@ public interface SymptomService {
 
     void update(Symptom symptom);
 
+    void delete(int id);
+
     Symptom getById(int id);
 
     List<Symptom> getBySystemId(int id);

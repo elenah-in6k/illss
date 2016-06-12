@@ -46,6 +46,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     public void delete(T entity) {
+        getSession().flush();
         getSession().delete(entity);
     }
 

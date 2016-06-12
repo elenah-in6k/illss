@@ -71,6 +71,7 @@
 
             <a href="handbookOS" class="btn btn-primary btn-xl page-scroll">Довідник</a>
             <a href="diagnosticOS" class="btn btn-primary btn-xl page-scroll">Діагностика</a>
+            <a href="admin-page" class="btn btn-primary btn-xl page-scroll">Adminka</a>
 
         </div>
     </div>
