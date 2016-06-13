@@ -1,8 +1,3 @@
-<%@ page import="core.entity.Illness" %>
-<%@ page import="services.HandbookIllnsService" %>
-;
-<%@ page import="java.util.List" %>
-<%@ page import="core.entity.Symptom" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,6 +5,16 @@
 <!DOCTYPE html >
 <html>
 <head>
+    <style>
+        .btnnn {
+            margin: 14px;
+            margin: 14px;
+        }
+
+        .table-stripe > tbody > tr:nth-of-type(odd) {
+            background-color: #97f7ca;
+        }
+    </style>
 
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -36,17 +41,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" id="pgg1" href="#page-top">Спадкові хвороби людини</a>
+                <a class="navbar-brand page-scroll" id="pgg1" href="/index.jsp">Спадкові хвороби людини</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" id="pgg" href="handbookOS">Довідник</a>
+                        <a class="page-scroll" id="pgg" href="/handbookOS">Довідник</a>
                     </li>
                     <li>
                          <a class="page-scroll"  id="pgg" href="/diagnosticOS">Діагностика</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" id ="pgg"  href="/about">Про сайт</a>
+                    </li>
+                    <li>
+                        <form action="/illnesses/search">
+                            <input class="btnnn page-scroll" type="text" placeholder="Пошук хвороби" name="name"/>
+                            <%--<input class="btn-primary btnnn" type="submit" value="Пошук"/>--%>
+                        </form>
                     </li>
 
                 </ul>
@@ -60,12 +74,12 @@
         <h2>Результати діагностики</h2>
         <h3><span class=""> Симптоми:</span>
         <c:forEach items="${symptomsList}" var="symptom" varStatus="loop">
-        <div class="btn btn-info" id="pgg3"> ${symptom.getName()} </div>
+        <div class="btn" id="pgg3"> ${symptom.getName()} </div>
         </c:forEach>
         </h3>
         <div class="">
             <div>
-                <table class="table table-striped">
+                <table class="table table-stripe">
                     <tr>
                         <th>Назва хвороби</th>
                         <th>Кількість співпадінь</th>

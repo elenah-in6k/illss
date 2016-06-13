@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" id="pgg1" href="#page-top">Спадкові хвороби людини</a>
+                <a class="navbar-brand page-scroll" id="pgg1" href="/index.jsp">Спадкові хвороби людини</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,9 +42,6 @@
                     </li>
                     <li>
                         <a class="page-scroll"  id="pgg" href="">Симптоми</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll"  id="pgg" href="">Додати хворобу</a>
                     </li>
 
                 </ul>

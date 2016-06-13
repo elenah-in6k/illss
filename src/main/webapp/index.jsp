@@ -4,6 +4,15 @@
 <!DOCTYPE html >
 <html>
 <head>
+    <style>
+    .btnnn {
+        margin: 14px;
+        margin: 14px;
+    }
+    footer .footer-content {
+        text-align: right;
+    }
+    </style>
 
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -32,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Спадкові хвороби людини</a>
+            <a class="navbar-brand page-scroll" href="/index.jsp">Спадкові хвороби людини</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,8 +58,8 @@
                 </li>
                 <li>
                     <form action="/illnesses/search">
-                    <input class="page-scroll" type="text" name="name"/>
-                    <button  type="submit" >Пошук</button>
+                        <input class="btnnn page-scroll" type="text" placeholder="Пошук хвороби" name="name"/>
+                        <%--<input class="btn-primary btnnn" type="submit" value="Пошук"/>--%>
                     </form>
                 </li>
 
@@ -71,10 +80,14 @@
 
             <a href="handbookOS" class="btn btn-primary btn-xl page-scroll">Довідник</a>
             <a href="diagnosticOS" class="btn btn-primary btn-xl page-scroll">Діагностика</a>
-            <a href="admin-page" class="btn btn-primary btn-xl page-scroll">Adminka</a>
 
         </div>
     </div>
 </header>
+<footer>
+    <div class="footer-content navbar-fixed-bottom navbar navbar-default">
+        <a href="admin-page">Адміністрування</a>
+    </div>
+    </footer>
 </body>
 </html>

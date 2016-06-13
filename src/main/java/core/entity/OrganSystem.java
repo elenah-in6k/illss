@@ -1,6 +1,7 @@
 package core.entity;
 
 import javax.persistence.*;
+import java.awt.*;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,17 @@ public class OrganSystem {
 
     @Column(name = "name", length = 100, nullable = false)
     private String name;
+
+    public byte[] getImg() {
+        return img;
+    }
+
+    public void setImg(byte[] img) {
+        this.img = img;
+    }
+
+    @Column(name = "img", nullable = false)
+    private byte[] img;
 
     public int getId() {
         return id;

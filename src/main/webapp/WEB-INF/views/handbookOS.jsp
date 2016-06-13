@@ -7,7 +7,6 @@
 <!DOCTYPE html >
 <html>
 <head>
-
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -33,17 +32,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" id="pgg1" href="#page-top">Спадкові хвороби людини</a>
+                <a class="navbar-brand page-scroll" id="pgg1" href="/index.jsp">Спадкові хвороби людини</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" id="pgg" href="handbookOS">Довідник</a>
+                        <a class="page-scroll" id="pgg" href="/handbookOS">Довідник</a>
                     </li>
                     <li>
                          <a class="page-scroll"  id="pgg" href="/diagnosticOS">Діагностика</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" id ="pgg" href="/about">Про сайт</a>
+                    </li>
+                    <li>
+                        <form action="/illnesses/search">
+                            <input class="btnnn page-scroll" type="text" placeholder="Пошук хвороби" name="name"/>
+                            <%--<input class="btn-primary btnnn" type="submit" value="Пошук"/>--%>
+                        </form>
                     </li>
 
                 </ul>
@@ -56,13 +64,18 @@
     <h2>ДОВІДНИК. СИТЕМИ ОРГАНІВ</h2>
 
         <div class="container">
+            <div class="example2">
             <%
                 List<OrganSystem> organSystems = (List<OrganSystem>) request.getAttribute("list");
                     for (OrganSystem organSystem : organSystems) {
             %>
-            <a class="btn btn-primary" href="/illnesses/system/<%=organSystem.getId()%>">
-                <%=organSystem.getName()%></a>
-                <% } %>
+            <button class="btn btn-primary org" formaction="/illnesses/system/<%=organSystem.getId()%>">
+                <img class="fleft btn-img" src="/resources/images/<%=organSystem.getId()%>.jpeg" width="100" height="100" alt="systems">
+               <div class="fleft btn-lbl"><%=organSystem.getName()%></div>
+
+            </button>
+                <% }%>
+                </div>
         </div>
     </div>
 </center>

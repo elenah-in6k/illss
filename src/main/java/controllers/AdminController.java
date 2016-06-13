@@ -63,8 +63,6 @@ public class AdminController {
         return mv;
     }
 
-//видалення не можливе без видалення цих симптомів у хворобох,
-// а видаллення симптомів у хвороб не доцільне
 //    @RequestMapping(value = "/admin-page/illness/{id:[0-9]+}", method = RequestMethod.POST)
 //    public void deleteSymptom(@PathVariable("id") int id) {
 //        symptomService.delete(id);
